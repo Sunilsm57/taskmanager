@@ -1,0 +1,148 @@
+<div class="sidebar" [ngClass]="{'close': isSidebarClosed}">
+    <div>
+        <img [src]="log_img" alt="">
+    </div>
+    <ul class="nav-links">
+        <li>
+            <div class="iocn-link">
+                <a>
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name" href="#">Dashboard </span>
+                    <span class="link_name" style="margin-left: 10px;">
+                        <i class="bx" [ngClass]="{'bxs-chevron-down': !showSideNav, 'bxs-chevron-up': showSideNav}"
+                            (click)="toggleSideNav()"></i>
+                    </span>
+                </a>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">Dashboard</a></li>
+                <li><a [routerLink]="['/monitoring-dashboard']">Monitoring Dashboard</a></li>
+                <li><a [routerLink]="['/rollout-dashboard']">Rollout Dashboard</a></li>
+            </ul>
+            <div class="sidenav" *ngIf="showSideNav">
+                <a href="#">Monitoring Dashboard</a>
+                <a href="#">Rollout Dashboard</a>
+            </div>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a>
+                    <i class='bx bx-file-blank'></i>
+                    <span class="link_name">Rollout</span>
+                    <span class="link_name" style="margin-left: 38px;">
+                        <i class="bx" [ngClass]="{'bxs-chevron-down': !rollOuts, 'bxs-chevron-up': rollOuts}"
+                            (click)="rollOutMenu()"></i>
+                    </span>
+                </a>
+
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name">Rollout</a></li>
+                <li><a href="#">Project</a></li>
+                <li><a href="#">Routes</a></li>
+                <li><a href="#">Sections</a></li>
+                <li><a href="#">Task</a></li>
+                <li><a href="#">Vendor</a></li>
+                <li><a href="#">ROW</a></li>
+                <li><a href="#">Work-Order</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Materials</a></li>
+                <li><a href="#">Entity Config</a> <i class='bx bxs-chevron-down arrow'></i></li>
+                <li><a href="#">Reports</a><i class='bx bxs-chevron-down arrow'></i></li>
+            </ul>
+            <div class="sidenav" style="margin-left:20px ;" *ngIf="rollOuts">
+                <a href="#">Project</a>
+                <a href="#">Routes</a>
+                <a href="#">Sections</a>
+                <a href="#">Task</a>
+                <a href="#">Vendor</a>
+                <a href="#">ROW</a>
+                <a href="#">Work-Order</a>
+                <a href="#">Resources</a>
+                <a href="#">Materials</a>
+                <a href="#" class="entity">Entity Config <i class="bx bxs-chevron-down"></i> </a>
+                <a href="#">Reports</a>
+            </div>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a>
+                    <i class='bx bx-file-blank'></i>
+                    <span class="link_name" (click)="monitoringDown()">Monitoring</span>
+                    <span class="link_name" (click)="monitoringDown()">
+                        <i class="bx" [ngClass]="{'bxs-chevron-down': !monitoring, 'bxs-chevron-up': monitoring}"></i>
+                    </span>
+                </a>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">Monitoring management</a></li>
+                <li><a href="#">Cases</a></li>
+                <li><a href="#">Assests</a></li>
+                <li><a href="#">Geofences</a></li>
+                <li><a href="#">Live-monitoring</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Task</a></li>
+                <li> <a href="#">Entity Configuration</a></li>
+
+            </ul>
+            <div class="sidenav" style="margin-left:20px ;" *ngIf="monitoring">
+                <a [routerLink]="['/cases']">Cases</a>
+                <a [routerLink]="['/assets']">Assests</a>
+                <a [routerLink]="['/geofences']">Geofences</a>
+                <a [routerLink]="['/live-monitoring']">Live-monitoring</a>
+                <a href="#">Admin</a>
+                <a href="#">Reports</a>
+                <a href="#">Entity Configuration</a>
+            </div>
+        </li>
+        <li>
+            <div class="iocn-link">
+                <a href="#">
+                    <i class='bx bx-file'></i>
+                    <span class="link_name">Reports</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="#">Reports</a></li>
+                <li><a href="#">Daily-report</a></li>
+                <li><a href="#">Measurement</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-compass'></i>
+                <span class="link_name">Explore</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Explore</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-history'></i>
+                <span class="link_name">History</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">History</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class='bx bx-user-circle'></i>
+                <span class="link_name">User</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">User</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+<section class="home-section">
+    <div class="home-content">
+        <i class='bx bx-menu menu-icon' style="font-size: 26px;" (click)="toggleSidebar()"></i>
+
+    </div>
+</section>

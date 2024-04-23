@@ -1,0 +1,62 @@
+/* task-list.component.css */
+
+/* Style for the tasks list */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.task-details {
+    margin-bottom: 10px;
+}
+
+.actions button {
+    margin-right: 10px;
+}
+
+/* Style for the edit form */
+.edit-form {
+    margin-top: 20px;
+}
+
+.edit-form input,
+.edit-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.edit-form button {
+    margin-right: 10px;
+    background-color: wheat;
+    border-color: wheat;
+    border-radius: 5px solid teal;
+}
+
+button {
+    background-color: teal;
+    border-color: teal;
+    border: 10px solide teal;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.card {
+    width: 260px;
+    max-height: 250px;
+}
+
+.card p {
+    text-wrap: wrap;
+}
+
+.wrap-text {
+    overflow-y: auto;
+    max-height: 80px;
+}

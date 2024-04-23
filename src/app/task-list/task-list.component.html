@@ -1,0 +1,39 @@
+<!-- task-list.component.html -->
+<div class="container">
+    <h2>Tasks</h2>
+    <div class="d-flex flex-wrap">
+        <div class="card m-2" *ngFor="let task of tasks">
+            <div class="card-body">
+                <h5 class="card-title">Task: {{ task.title }}</h5>
+                <p class="card-text wrap-text">Description: {{ task.description }}</p>
+                <p class="card-text">Status: {{ task.status }}</p>
+            </div>
+            <div class="card-footer">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary" (click)="editTask(task)">Edit</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteTask(task._id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="editingTask" class="edit-form">
+    <h3>Edit Task</h3>
+    <form (submit)="updateTask()">
+        <div class="form-group">
+            <input type="text" [(ngModel)]="editedTask.title" name="title" class="form-control" placeholder="Title"
+                required>
+        </div>
+        <div class="form-group">
+            <textarea [(ngModel)]="editedTask.description" name="description" class="form-control"
+                placeholder="Description"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="text" [(ngModel)]="editedTask.status" name="status" class="form-control" placeholder="Status">
+        </div>
+        <button type="submit" class="btn btn-success">Update Task</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+    </form>
+</div>
